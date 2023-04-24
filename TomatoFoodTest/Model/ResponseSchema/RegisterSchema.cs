@@ -11,7 +11,7 @@ namespace TomatoFoodTest.Model.ResponseSchema
     {
         public static JSchema RegisterJson()
         {
-            JSchema schema = JSchema.Parse(@"{{
+            JSchema schema = JSchema.Parse(@"{
     'type': 'object',
     'required': [
         'role',
@@ -45,7 +45,7 @@ namespace TomatoFoodTest.Model.ResponseSchema
             'type': 'integer'
         }
     }
-}}");
+}");
             return schema;
         }
     }

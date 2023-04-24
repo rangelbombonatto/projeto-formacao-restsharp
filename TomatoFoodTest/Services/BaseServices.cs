@@ -45,7 +45,7 @@ namespace TomatoFoodTest.Services
         public void RetornaResposta(string msgApi)
         {
             JObject resposta = JObject.Parse(resp.Content);
-            Console.WriteLine($"{msgApi}");
+            Console.WriteLine($"{msgApi} - {(int)resp.StatusCode}");
             Console.WriteLine(resposta.ToString());
         }
     }
