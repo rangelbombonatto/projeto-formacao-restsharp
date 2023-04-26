@@ -16,7 +16,8 @@ namespace TomatoFoodTest.Services
         public IRestResponse resp;
 
         public string urlBase = "http://localhost:3000/api/";
-        
+        public string urlVirtualizada = "http://localhost:3001/api/";
+
 
         public RestClient Client(string url)
         {
