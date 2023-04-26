@@ -110,10 +110,6 @@ C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\obj\Debug\net6.0\refint\To
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\obj\Debug\net6.0\TomatoFoodTest.pdb
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\testhost.exe
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\testhost.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.TestPlatform.AdapterUtilities.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\TomatoFoodTest.deps.json
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\TomatoFoodTest.runtimeconfig.json
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\TomatoFoodTest.dll
@@ -127,7 +123,6 @@ C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.TestPlatform.Utilities.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Newtonsoft.Json.Schema.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\NuGet.Frameworks.dll
@@ -197,8 +192,13 @@ C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\zh-Hans\M
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\obj\Debug\net6.0\TomatoFoodTest.csproj.CopyComplete
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\obj\Debug\net6.0\TomatoFoodTest.genruntimeconfig.cache
 C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\obj\Debug\net6.0\ref\TomatoFoodTest.dll
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\NUnit3.TestAdapter.dll
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\nunit.engine.dll
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\nunit.engine.api.dll
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\nunit.engine.core.dll
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\testcentric.engine.metadata.dll
+C:\projetos\projeto-formacao-restsharp\TomatoFoodTest\bin\Debug\net6.0\nunit.framework.dll

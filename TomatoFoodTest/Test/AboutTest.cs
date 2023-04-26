@@ -1,19 +1,14 @@
 ﻿using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
 using TomatoFoodTest.Model.ResponseSchema;
 using TomatoFoodTest.Services;
 
 namespace TomatoFoodTest.Test
 {
-    [TestClass]
     public class AboutTest
     {
-        [TestMethod]
+        [Test]
         public void ValidaInformacaoAbout()
         {
             AboutServices about = new AboutServices();
@@ -30,7 +25,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarContratoDaApiAbout()
         {
             AboutServices about = new AboutServices();

@@ -1,24 +1,19 @@
 ﻿using Bogus;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
 using TomatoFoodTest.Model.ResponseSchema;
 using TomatoFoodTest.Services;
 
 namespace TomatoFoodTest.Test
 {
-    [TestClass]
     public class LoginTest
     {
         public string nomeCadastro, emailCadastro, senhaCadastro;
         public string funcaoGerente = "manager";
         public string funcaoUsuario = "user";
 
-        [TestInitialize]
+        [SetUp]
         public void DeveRealizarCadastroDeConta()
         {
             var faker = new Faker();
@@ -35,7 +30,7 @@ namespace TomatoFoodTest.Test
             responseRS.CadastrarConta(nomeCadastro, emailCadastro, senhaCadastro, senhaCadastro, funcaoUsuario);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveRealizarLoginComSucesso()
         {
             LoginServices responseLS = new LoginServices();
@@ -45,7 +40,7 @@ namespace TomatoFoodTest.Test
             Assert.IsTrue(response.success);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveRealizarLoginComSenhaInvalida()
         {
             LoginServices responseLS = new LoginServices();
@@ -56,7 +51,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)responseLS.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveRealizarLoginComInformacoesVazias()
         {
             LoginServices responseLS = new LoginServices();
@@ -68,7 +63,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)responseLS.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveRealizarLoginComEmailNaoCadastrado()
         {
             LoginServices responseLS = new LoginServices();
@@ -80,7 +75,7 @@ namespace TomatoFoodTest.Test
         }
 
 
-        [TestMethod]
+        [Test]
         public void DeveValidarContratoDaApiLogin()
         {
             LoginServices responseLS = new LoginServices();

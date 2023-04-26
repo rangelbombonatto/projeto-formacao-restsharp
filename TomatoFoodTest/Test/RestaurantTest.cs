@@ -1,18 +1,12 @@
 ﻿using Bogus;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
 using TomatoFoodTest.Model.ResponseSchema;
 using TomatoFoodTest.Services;
 
 namespace TomatoFoodTest.Test
 {
-    [TestClass]
     public class RestaurantTest
     {
         public static string nomeCadastro, emailCadastro, senhaCadastro;
@@ -21,8 +15,8 @@ namespace TomatoFoodTest.Test
 
         public static string tkn;
 
-        [ClassInitialize()]
-        public static void DeveRealizarCadastroDeConta(TestContext testContext)
+        [OneTimeSetUp]
+        public static void DeveRealizarCadastroDeConta()
         {
             var faker = new Faker();
 
@@ -44,7 +38,7 @@ namespace TomatoFoodTest.Test
             tkn = response.token;
         }
 
-        [TestMethod]
+        [Test]
         public void DeveCadastrarComSucessoUmRestaurante()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -61,7 +55,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteSemNome()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -73,7 +67,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteSemTipo()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -85,7 +79,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteSemDescricao()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -97,7 +91,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteSemNomeRefeicao()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -109,7 +103,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteSemDescricaoRefeicao()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -121,7 +115,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteSemPrecoRefeicao()
         {
             RestaurantServices responseRS = new RestaurantServices();
@@ -133,7 +127,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarRestauranteComUsuarioUser()
         {
             RegisterServices responseRS = new RegisterServices();
@@ -151,7 +145,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarContratoDaApiRestaurante()
         {
             RestaurantServices responseRS = new RestaurantServices();

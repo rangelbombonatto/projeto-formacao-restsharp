@@ -1,17 +1,12 @@
 ﻿using Bogus;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
 using TomatoFoodTest.Model.ResponseSchema;
 using TomatoFoodTest.Services;
 
 namespace TomatoFoodTest.Test
 {
-    [TestClass]
     public class OrdersTest
     {
         public static string nomeCadastro, emailCadastro, senhaCadastro;
@@ -22,8 +17,8 @@ namespace TomatoFoodTest.Test
 
         public static string tkn, idUsuario, idRestaurante, idRefeicao;
 
-        [ClassInitialize()]
-        public static void DeveRealizarCadastroDeConta(TestContext testContext)
+        [OneTimeSetUp]
+        public static void DeveRealizarCadastroDeConta()
         {
             var faker = new Faker();
 
@@ -53,7 +48,7 @@ namespace TomatoFoodTest.Test
             idRefeicao = responseRestaurante._meals[0];
 
         }
-        [TestMethod]
+        [Test]
         public void DeveCriarComSucessoUmPedido()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -72,7 +67,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarParticao1()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -91,7 +86,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarParticao2()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -110,7 +105,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarParticao3()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -129,7 +124,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarParticao4()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -148,7 +143,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarLimiteInferior250()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -167,7 +162,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarLimiteSuperior250()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -186,7 +181,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarLimiteInferior500()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -205,7 +200,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarLimiteSuperior500()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -224,7 +219,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarLimiteInferior700()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -243,7 +238,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarLimiteSuperior700()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -262,7 +257,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(201, (int)ordersServices.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarTransicaoDeTodosEstadosCorretamente()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -289,7 +284,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarTransicaoDePlacedForCanceled()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -303,7 +298,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarTransicaoDePlacedForInRoute()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -317,7 +312,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarTransicaoDePlacedForDelivered()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -331,7 +326,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarTransicaoDePlacedForReceived()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -345,7 +340,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveExcluirPedidoComSucesso()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -359,7 +354,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void DeveBuscarPedidoComSucesso()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -373,7 +368,7 @@ namespace TomatoFoodTest.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCriarPedidoComTokenInvalido()
         {
             OrdersServices ordersServices = new OrdersServices();
@@ -383,7 +378,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual("401-Unauthorized", responseOrder.message);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarContratoDaApiOrders()
         {
             OrdersServices ordersServices = new OrdersServices();

@@ -1,21 +1,12 @@
 ﻿using Bogus;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TomatoFoodTest.Model.Request;
-using TomatoFoodTest.Model.Response;
+using NUnit.Framework;
 using TomatoFoodTest.Model.ResponseSchema;
 using TomatoFoodTest.Services;
 
 namespace TomatoFoodTest.Test
 {
-    [TestClass]
     public class RegisterTest
     {
         string dataAtual = DateTime.UtcNow.ToString("yyyy-MM-dd");
@@ -23,7 +14,7 @@ namespace TomatoFoodTest.Test
         public string funcaoGerente = "manager";
         public string funcaoUsuario = "user";
 
-        [TestInitialize] // Antes de cada metódo é chamado esse teste
+        [SetUp] // Antes de cada metódo é chamado esse teste
         public void GerarDadosTeste()
         {
             var faker = new Faker();
@@ -38,7 +29,7 @@ namespace TomatoFoodTest.Test
         }
 
 
-        [TestMethod]
+        [Test]
         public void DeveCadastrarUsuarioComFuncaoGerente()
         {
             RegisterServices response = new RegisterServices();
@@ -55,7 +46,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(200, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveCadastrarUsuarioComFuncaoUsuario()
         {
             RegisterServices response = new RegisterServices();
@@ -72,7 +63,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(200, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarUsuarioComNomeVazio()
         {
             RegisterServices response = new RegisterServices();
@@ -82,7 +73,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarUsuarioComEmailVazio()
         {
             RegisterServices response = new RegisterServices();
@@ -92,7 +83,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarUsuarioComEmailInvalido()
         {
             RegisterServices response = new RegisterServices();
@@ -102,7 +93,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarUsuarioComSenhaVazia()
         {
             RegisterServices response = new RegisterServices();
@@ -112,7 +103,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void NaoDeveCadastrarUsuarioComSenhaDiferentes()
         {
             RegisterServices response = new RegisterServices();
@@ -122,7 +113,7 @@ namespace TomatoFoodTest.Test
             Assert.AreEqual(400, (int)response.resp.StatusCode);
         }
 
-        [TestMethod]
+        [Test]
         public void DeveValidarContratoDaApiRegister()
         {
             RegisterServices response = new RegisterServices();
